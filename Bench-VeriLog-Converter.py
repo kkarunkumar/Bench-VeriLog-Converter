@@ -1,7 +1,8 @@
 import os
 import re
-def main():
-    for filename in os.listdir(os.getcwd()):
+import sys
+def main(argv):
+    for filename in os.listdir(argv[1]):
         if filename.endswith('.bench'):
             invar = []
             outvar = []
@@ -65,4 +66,4 @@ def FileWrite(filename, invar, outvar, instructions, wire):
     print("converted "+filename+" to "+vname)
 
 if __name__=="__main__":
-    main()
+    main(sys.argv)
